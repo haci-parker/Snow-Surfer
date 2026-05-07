@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
 
     Vector2 moveVector;
     public bool canControlPlayer = true;
+    float previousRotation;
+    float totalRotation;
+    int flipCount;
 
     void Start()
     {   
@@ -27,6 +30,20 @@ public class PlayerController : MonoBehaviour
         {
         RotatePlayer();
         BoostPlayer();
+        }
+        CalculateFlips();
+
+        if(totalRotation > 360)
+        {
+            flipCount +=1;
+            totalRotation -= 360;
+            print(flipCount);
+        }
+        else if(totalRotation < -360)
+        {
+            flipCount += 1;
+            totalRotation += 360;
+            print(flipCount);
         }
     }
 
@@ -45,16 +62,22 @@ public class PlayerController : MonoBehaviour
     {
         if(moveVector.y > 0)
         {
-            Debug.Log("y > 0");
             surfaceEffector2D.speed = boostSpeed;
-            Debug.Log(surfaceEffector2D.speed);
         }
         else if(moveVector.y == 0)
         {
-            Debug.Log("y = 0");
             surfaceEffector2D.speed = baseSpeed;
-            Debug.Log(surfaceEffector2D.speed);
         }
+    }
+
+    void CalculateFlips()
+    {
+        float currentRotation = transform.rotation.eulerAngles.z;
+
+        totalRotation += Mathf.DeltaAngle(previousRotation, currentRotation);
+
+
+        previousRotation = currentRotation;
     }
 
     public void DisableControls()

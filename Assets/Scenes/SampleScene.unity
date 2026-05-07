@@ -13214,6 +13214,7 @@ MonoBehaviour:
   torqueAmount: 10
   baseSpeed: 15
   boostSpeed: 30
+  canControlPlayer: 1
 --- !u!114 &1852450762
 MonoBehaviour:
   m_ObjectHideFlags: 0
