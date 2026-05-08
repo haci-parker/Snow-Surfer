@@ -16,12 +16,14 @@ public class PlayerController : MonoBehaviour
     float previousRotation;
     float totalRotation;
     int flipCount;
+    ScoreManager scoreManager;
 
     void Start()
     {   
         moveAction = InputSystem.actions.FindAction("Move");
         myRigidbody2D = GetComponent<Rigidbody2D>();
         surfaceEffector2D = FindFirstObjectByType<SurfaceEffector2D>();
+        scoreManager = FindFirstObjectByType<ScoreManager>();
     }
 
     void Update()
@@ -37,13 +39,13 @@ public class PlayerController : MonoBehaviour
         {
             flipCount +=1;
             totalRotation -= 360;
-            print(flipCount);
+            scoreManager.AddScore(100);
         }
         else if(totalRotation < -360)
         {
             flipCount += 1;
             totalRotation += 360;
-            print(flipCount);
+            scoreManager.AddScore(100);
         }
     }
 

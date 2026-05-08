@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 80951458}
   - component: {fileID: 80951457}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,8 +390,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c00db9de2937441b6b476e0b5e6e37e0, type: 2}
+  m_sharedMaterial: {fileID: 6548766724117579562, guid: c00db9de2937441b6b476e0b5e6e37e0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -399,13 +399,13 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.24313721, g: 0.90588236, b: 0.35275543, a: 1}
+    topRight: {r: 0, g: 0.7757623, b: 1, a: 1}
+    bottomLeft: {r: 0, g: 0.21367073, b: 1, a: 1}
+    bottomRight: {r: 0, g: 1, b: 0.96486473, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1125,6 +1125,7 @@ GameObject:
   - component: {fileID: 469207281}
   - component: {fileID: 469207280}
   - component: {fileID: 469207279}
+  - component: {fileID: 469207283}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1215,6 +1216,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &469207283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469207278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cda695c2949b845bc40415bdc49fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  scoreText: {fileID: 80951457}
 --- !u!4 &487560033 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5202722791209693973, guid: c0528fdf7dd9e4499afda9925f75adf0, type: 3}
@@ -1352,7 +1366,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8, y: 0, z: -10}
+  m_LocalPosition: {x: 7.2, y: -2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15220,7 +15234,7 @@ Transform:
   m_GameObject: {fileID: 1892557451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8, y: 0, z: -10}
+  m_LocalPosition: {x: 7.2, y: -2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15244,7 +15258,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 0, z: -10}
+  FollowOffset: {x: 10, y: -2, z: -10}
 --- !u!1001 &1907391187
 PrefabInstance:
   m_ObjectHideFlags: 0
