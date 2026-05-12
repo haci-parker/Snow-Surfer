@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Short Speed
   m_EditorClassIdentifier: Assembly-CSharp::PowerupSO
   powerupType: speed
-  valueChange: 10
+  valueChange: 20
   time: 2

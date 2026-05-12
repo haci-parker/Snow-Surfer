@@ -28,6 +28,7 @@ public class PowerupManager : MonoBehaviour
             {
                 timeLeft -= Time.deltaTime;
                 print(timeLeft);
+
                 if(timeLeft <= 0)
                 {
                     player.DeactivatePowerup(powerup);
