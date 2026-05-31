@@ -66,11 +66,11 @@ public class PlayerController : MonoBehaviour
     {
         if(moveVector.y > 0)
         {
-            surfaceEffector2D.speed = boostSpeed;
+            surfaceEffector2D.speed = baseSpeed;
         }
         else if(moveVector.y == 0)
         {
-            surfaceEffector2D.speed = baseSpeed;
+            surfaceEffector2D.speed = 0;
         }
     }
 
