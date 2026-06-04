@@ -57,6 +57,17 @@ public class MoneyManager : MonoBehaviour
         return totalMoney;
     }
 
+    public bool SpendMoney(int amount)
+    {
+        if (totalMoney >= amount)
+        {
+            totalMoney -= amount;
+            UpdateUI();
+            return true;
+        }
+        return false;
+    }
+
     private void FindAndUpdateMoneyText()
     {
         GameObject moneyTextObj = GameObject.Find(moneyTextName);
